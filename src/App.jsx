@@ -13,7 +13,12 @@ function App() {
 
   const onChangeValue = (e) => {
     setInputValue(e);
-  }
+  };
+
+  const onClickOk = () => {
+    const request = fetch(`${link}${inputValue}`);
+    request.then((res) => res.json()).then((result) => setItems([result]));
+  };
 
   React.useEffect(() => {
     let requests = defaultCities.map((city) => fetch(`${link}${city}}`));
@@ -31,6 +36,7 @@ function App() {
         value={inputValue}
         onChange={(e) => onChangeValue(e.target.value)}
       />
+      <button onClick={onClickOk}>Ok</button>
       <div className="cards">
         {items.map((item, index) => (
           <CityCard
