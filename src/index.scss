@@ -5,21 +5,46 @@
 }
 
 .card-block {
+  margin: 5px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(114deg, rgba(234,234,247,1) 40%, rgba(21,158,209,1) 100%);
+  border-radius: 15px;
+  width: 240px;
+  height: 240px;
+  background: linear-gradient(
+    114deg,
+    rgba(234, 234, 247, 1) 40%,
+    rgba(21, 158, 209, 1) 100%
+  );
 
   &__weather {
     display: flex;
     justify-content: space-between;
   }
 
+  &__leftBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__rightBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .temperature {
+      font-size: 25px;
+    }
+  }
+
   &__extraInfo {
+    display: flex;
+    justify-content: space-around;
     .extraInfo-item {
       display: flex;
+      align-items: center;
     }
   }
 }

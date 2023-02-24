@@ -1,28 +1,33 @@
 import React from "react";
-import axios from "axios";
 import CityCard from "./components/CityCard";
 
-const link = "http://api.weatherstack.com/current?access_key=9d88ccefa0f2f87dad31ead04289a0fc&query=";
+const link =
+  "http://api.weatherstack.com/current?access_key=c143f2db1cb2ce460b52161b01defa10&query=";
 
-const moscow = "Moscow";
-const rostov = "Rostov-on-Don";
-const krasnodar = "Krasnodar";
+const defaultCities = ["Rostov-on-Don"];
+// const defaultCities = ["Moscow", "Rostov-on-Don", "Krasnodar"];
 
 function App() {
-  const [item, setItem] = React.useState(null);
+  const [items, setItems] = React.useState([]);
 
-  const fetchData = async () => {
-    const { data } = await axios(
-      `${link}${moscow}}`
-    );
-    console.log(data);
-  };
+  React.useEffect(() => {
+    let requests = defaultCities.map((city) => fetch(`${link}${city}}`));
 
-  // fetchData();
+    Promise.all(requests)
+      .then((responses) => Promise.all(responses.map((r) => r.json())))
+      .then((result) => setItems(result))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <div className="App">
-      <CityCard />
+      {items.map((item, index) => (
+        <CityCard 
+        current={item.current}
+        location={item.location}
+        request={item.request}
+        key={index} />
+      ))}
     </div>
   );
 }
