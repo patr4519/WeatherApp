@@ -1,3 +1,4 @@
+import React from "react";
 import axios from "axios";
 import CityCard from "./components/CityCard";
 
@@ -8,6 +9,8 @@ const rostov = "Rostov-on-Don";
 const krasnodar = "Krasnodar";
 
 function App() {
+  const [item, setItem] = React.useState(null);
+
   const fetchData = async () => {
     const { data } = await axios(
       `${link}${moscow}}`
