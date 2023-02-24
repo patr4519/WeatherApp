@@ -9,6 +9,11 @@ const defaultCities = ["Rostov-on-Don"];
 
 function App() {
   const [items, setItems] = React.useState([]);
+  const [inputValue, setInputValue] = React.useState("");
+
+  const onChangeValue = (e) => {
+    setInputValue(e);
+  }
 
   React.useEffect(() => {
     let requests = defaultCities.map((city) => fetch(`${link}${city}}`));
@@ -21,13 +26,21 @@ function App() {
 
   return (
     <div className="App">
-      {items.map((item, index) => (
-        <CityCard 
-        current={item.current}
-        location={item.location}
-        request={item.request}
-        key={index} />
-      ))}
+      <input
+        placeholder="Input your city..."
+        value={inputValue}
+        onChange={(e) => onChangeValue(e.target.value)}
+      />
+      <div className="cards">
+        {items.map((item, index) => (
+          <CityCard
+            current={item.current}
+            location={item.location}
+            request={item.request}
+            key={index}
+          />
+        ))}
+      </div>
     </div>
   );
 }
