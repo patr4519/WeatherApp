@@ -1,6 +1,8 @@
 import React from "react";
 import CityCard from "./components/CityCard";
 
+// key 7a8d834ef4324d18161ffc2d94c7657e
+
 const link =
   "http://api.weatherstack.com/current?access_key=7a8d834ef4324d18161ffc2d94c7657e&query=";
 
@@ -31,12 +33,14 @@ function App() {
 
   return (
     <div className="App">
-      <input
-        placeholder="Input your city..."
-        value={inputValue}
-        onChange={(e) => onChangeValue(e.target.value)}
-      />
-      <button onClick={onClickOk}>Ok</button>
+      <div className="inputSearch">
+        <input
+          placeholder="Input your city..."
+          value={inputValue}
+          onChange={(e) => onChangeValue(e.target.value)}
+        />
+        <button onClick={onClickOk}>Ok</button>
+      </div>
       <div className="cards">
         {items.map((item, index) => (
           <CityCard
