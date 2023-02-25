@@ -19,7 +19,10 @@ function App() {
 
   const onClickOk = () => {
     const request = fetch(`${link}${inputValue}`);
-    request.then((res) => res.json()).then((result) => setItems([result]));
+    request
+      .then((res) => res.json())
+      .then((result) => setItems([result]))
+      .catch((err) => console.log(err));
   };
 
   React.useEffect(() => {
