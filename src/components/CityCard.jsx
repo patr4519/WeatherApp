@@ -7,7 +7,7 @@ const CityCard = ({ current, location, request }) => {
       <h3 className="card-block__title">{location.name}</h3>
       <div className="card-block__weather">
         <div className="card-block__leftBlock">
-          <img src={current.weather_icons[0]} alt="weather_icon" />
+          <img className="weather_ico" src={current.weather_icons[0]} alt="weather_icon" />
           <span>{current.weather_descriptions[0]}</span>
         </div>
         <div className="card-block__rightBlock">

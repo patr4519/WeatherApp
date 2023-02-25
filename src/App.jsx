@@ -7,7 +7,7 @@ const link =
   "http://api.weatherstack.com/current?access_key=7a8d834ef4324d18161ffc2d94c7657e&query=";
 
 const defaultCities = ["Rostov-on-Don"];
-// const defaultCities = ["Moscow", "Rostov-on-Don", "Krasnodar", "Tikhoretsk"];
+// const defaultCities = ["Moscow", "Rostov-on-Don", "Krasnodar"];
 
 function App() {
   const [items, setItems] = React.useState([]);

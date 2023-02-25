@@ -6,6 +6,9 @@
 
 body {
   background-color: rgb(32, 104, 104);
+  font-family: "Fjalla One", sans-serif;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px #000000;
 }
 
 .App {
@@ -21,12 +24,14 @@ body {
       height: 30px;
       margin-top: 5px;
       margin-bottom: 10px;
+      font-family: "Fjalla One", sans-serif;
     }
 
     button {
       height: 30px;
       width: 30px;
       margin-top: 5px;
+      font-family: "Fjalla One", sans-serif;
     }
   }
 
@@ -45,9 +50,9 @@ body {
     width: 240px;
     height: 240px;
     background: linear-gradient(
-      114deg,
-      rgba(234, 234, 247, 1) 40%,
-      rgba(21, 158, 209, 1) 100%
+      141deg,
+      rgba(17, 13, 107, 1) 36%,
+      rgba(6, 199, 238, 1) 100%
     );
 
     &__weather {
@@ -59,6 +64,10 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      .weather_ico {
+        border-radius: 10px;
+      }
     }
 
     &__rightBlock {
@@ -66,7 +75,7 @@ body {
       flex-direction: column;
       align-items: center;
       .temperature {
-        font-size: 25px;
+        font-size: 35px;
       }
     }
 
