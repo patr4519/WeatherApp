@@ -60,7 +60,7 @@ const CityCard = ({ current, location, request }) => {
             </g>
           </svg>
           <div>
-            <p>{current.pressure}</p>
+            <p>{current.pressure} mb</p>
           </div>
         </div>
       </div>

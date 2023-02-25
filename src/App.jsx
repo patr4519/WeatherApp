@@ -24,6 +24,7 @@ function App() {
     request
       .then((res) => res.json())
       .then((result) => setItems([result]))
+      .then(setInputValue(''))
       .catch((err) => console.log(err));
   };
 
