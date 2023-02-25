@@ -38,6 +38,14 @@ body {
   .cards {
     display: flex;
     justify-content: center;
+
+    .skeletons {
+      display: flex;
+
+      .skeleton {
+        margin: 5px;
+      }
+    }
   }
 
   .card-block {
